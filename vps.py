@@ -2,28 +2,16 @@ import os
 
 print("Code by DuonngwTek, DONOT COPY!")
 print("Starting now...")
+cmd = 'wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"'
+os.system(cmd)
+cmd = 'wget -O os.iso "https://drive.massgrave.dev/en_windows_10_iot_enterprise_ltsc_2019_x64_dvd_a1aa819f.iso"'
+os.system(cmd)
 cmd = 'sudo apt-get update'
 os.system(cmd)
-cmd = 'wget -O cr.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"'
+cmd = 'sudo apt autoremove'
 os.system(cmd)
-cmd = 'sudo apt-get install ./cr.deb'
+cmd = 'sudo apt install qemu-kvm -y'
 os.system(cmd)
-cmd = 'wget -O rm.deb "https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb"'
+cmd = 'qemu-img create -f raw os.img 20G'
 os.system(cmd)
-cmd = 'sudo apt-get install ./rm.deb'
-os.system(cmd)
-cmd = 'sudo apt-get install --assume-yes ./chrome-remote-desktop_current_amd64.deb'
-os.system(cmd)
-cmd = 'sudo apt install --assume-yes xfce4 desktop-base dbus-x11 xscreensaver'
-os.system(cmd)
-cmd = 'sudo apt install xfce4-terminal -y'
-os.system(cmd)
-cmd = 'sudo apt-get install geany -y'
-os.system(cmd)
-cmd = 'sudo apt-get install vim-gtk3 -y'
-os.system(cmd)
-cmd = 'sudo apt install iputils-ping -y'
-os.system(cmd)
-cmd = 'sudo apt install neofetch -y'
-os.system(cmd)
-print("Complete! Please go to remotedesktop.google.com/headless to continue")
+print("Done. Please continue your work.")
