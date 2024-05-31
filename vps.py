@@ -8,8 +8,6 @@ cmd = 'wget -O os.iso "https://drive.massgrave.dev/en_windows_10_iot_enterprise_
 os.system(cmd)
 cmd = 'sudo apt-get update'
 os.system(cmd)
-cmd = 'sudo apt autoremove'
-os.system(cmd)
 cmd = 'sudo apt install qemu-kvm -y'
 os.system(cmd)
 cmd = 'qemu-img create -f raw os.img 20G'
